@@ -129,7 +129,8 @@ train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
     batch_size=batch_size,
     sort_within_batch=True,
     sort_key = lambda x: len(x.src),
-    device = device   
+    device = device,   
+    repeat=True
 )
 
 model = Transformer(
